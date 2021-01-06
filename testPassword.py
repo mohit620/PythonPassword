@@ -11,7 +11,8 @@ class testPassword(unittest.TestCase):
         True
      def test1(self):
         True    
-
+    def test1(self):
+        True  
 
 if __name__ == '__main__':
     unittest.main()
