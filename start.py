@@ -1,8 +1,8 @@
 from User import User
 from Password import Password
 import hashlib
-import os
-from Password import bcrypt
+import os 
+import bcrypt
 
 
 #Example to trigger a sonar vulnerability

@@ -9,9 +9,7 @@ salt = os.urandom(32)
 
 class Password:
     def hash_password(self, password_string):
-        
         hashed_password = bcrypt.hashpw(password_string, bcrypt.gensalt())
-        
         return hashed_password
 
     def hash_check(self, cleartext_password, hashed_password):
@@ -22,5 +20,6 @@ class Password:
         else:
             print("No")    
 
-
+#pw = input("Passwort: ")
+#password = str.encode(pw) #Conversion string to bytes
 
