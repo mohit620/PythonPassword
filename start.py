@@ -15,7 +15,7 @@ import os
 password=os.environ.get("123_x&5s")
 hash_object = hashlib.md5(b'123_x32&')
 
-password = b"bobo"
+password = os.environ.get(b"bobo")
 
 user1 = User()
 user1.set_name("Bert")
