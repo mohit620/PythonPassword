@@ -13,7 +13,7 @@ import os
 #>>> bandit -r <folder>
 #deprecated md5 will not be found by sonar...
 password=os.environ.get("123_x&5s")
-hash_object = hashlib.md5(b'123_x32&')
+hash_object = bcrypt.hash_password.(b'123_x32&')
 
 password = os.environ.get(b"bobo")
 
