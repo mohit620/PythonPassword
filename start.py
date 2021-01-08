@@ -4,20 +4,11 @@ import hashlib
 import os 
 import bcrypt
 
-
-#Example to trigger a sonar vulnerability
-#import socket
-#ip = '127.0.0.1'
-#sock = socket.socket()
-#sock.bind((ip, 9090))
-
-#typical bandit findings
-#>>> bandit -r <folder>
-#deprecated md5 will not be found by sonar...
-password=os.getenv("123_x&5s")
+#secure the hardcoded password
+password=os.environ.get("123_x&5s")
 hash_object = bcrypt((b'123_x32&'),bcrypt.gensalt())
 
-password = os.getenv(b"bobo")
+password = os.environ.get(b"bobo")
 
 user1 = User()
 user1.set_name("Bert")
