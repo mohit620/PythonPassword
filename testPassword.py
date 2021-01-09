@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import unittest
 import Password
+import os
 
 """Valid passwords
  - are between 8 and 20 characters long
@@ -10,7 +11,8 @@ import Password
 
 """
 
-password_value = "123_x&5s"
+#password_value = "123_x&5s"
+
 
 class ValidateTests(unittest.TestCase):
 
@@ -18,23 +20,23 @@ class ValidateTests(unittest.TestCase):
         self.hash_password = Password.Password()
 
     def test_valid_hash(self):
-        hashvalue = self.hash_password.hash_password(password_value)
+        hashvalue = self.hash_password.hash_password("123_x&5s")
         self.assertTrue(
             self.hash_password.hash_check(
-                password_value,
+                "123_x&5s",
                 hashvalue
         ))
 
     def test_invalid_hash(self):
         invalid_hash = b'$2b$10$ffeSVJaMw4V37Q3xK2jFcuSC2DISy0ikKuadTPyFxa054yc9eVvEq'
-        hashvalue = self.hash_password.hash_password(password_value)
+        hashvalue = self.hash_password.hash_password("123_x&5s")
         self.assertNotEqual(
             hashvalue,
             invalid_hash
         )
         self.assertFalse(
             self.hash_password.hash_check(
-                password_value,
+                "123_x&5s",
                 invalid_hash
         ))
 
