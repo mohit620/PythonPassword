@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import unittest
 import Password
 
@@ -17,18 +18,18 @@ class ValidateTests(unittest.TestCase):
         self.hash_password = Password.Password()
 
     def test_valid_hash(self):
-        hash = self.hash_password.hash_password(password_value)
+        hashvalue = self.hash_password.hash_password(password_value)
         self.assertTrue(
             self.hash_password.hash_check(
                 password_value,
-                hash
+                hashvalue
         ))
 
     def test_invalid_hash(self):
         invalid_hash = b'$2b$10$ffeSVJaMw4V37Q3xK2jFcuSC2DISy0ikKuadTPyFxa054yc9eVvEq'
-        hash = self.hash_password.hash_password(password_value)
+        hashvalue = self.hash_password.hash_password(password_value)
         self.assertNotEqual(
-            hash,
+            hashvalue,
             invalid_hash
         )
         self.assertFalse(
