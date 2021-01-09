@@ -6,7 +6,7 @@ import bcrypt
 
 #secure the hardcoded password
 password=os.environ.get("123_x&5s")
-hash_object = bcrypt((b'123_x32&'),bcrypt.gensalt())
+hash_object = bcrypt.hashpw((b'123_x32&'),bcrypt.gensalt())
 
 password = os.environ.get(b"bobo")
 
