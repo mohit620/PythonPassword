@@ -32,7 +32,7 @@ class Password:
 
         try:
             if (hmac.compare_digest(bcrypt.hashpw(bytes(cleartext_password, 'utf-8'), hashed_password),
-                hashed_password)):
+                                    hashed_password)):
                 return True
         except Exception:
             return False
