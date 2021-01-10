@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import unittest
 import Password
-import os
+
 
 """Valid passwords
  - are between 8 and 20 characters long
