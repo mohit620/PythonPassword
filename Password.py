@@ -30,6 +30,11 @@ class Password:
         if isinstance(hashed_password, str):
             hashed_password = bytes(hashed_password, 'utf-8')
 
-        if (hmac.compare_digest(bcrypt.hashpw(bytes(cleartext_password, 'utf-8'), hashed_password),
-                                hashed_password)):
-            return True
+        try:
+            if (hmac.compare_digest(bcrypt.hashpw(bytes(cleartext_password, 'utf-8'), hashed_password),
+                hashed_password)):
+                return True
+        except Exception:
+            return False
+        else:
+            return False

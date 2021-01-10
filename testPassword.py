@@ -22,6 +22,13 @@ class ValidateTests(unittest.TestCase):
             self.hash_password.hash_password("123_x&5s"),
             b'$2b$10$ffeSVJaMw4V37Q3xK2jFcuSC2DISy0ikKuadTPyFxa054yc9eVvEq'
         )
+        self.assertFalse(
+            self.hash_password.hash_check(
+                self.hash_password.hash_password("1234567890_x&5s"),
+                b'$2b$10$ffeSVJaMw4V37Q3xK2jFcuSC2DISy0ikKuadTPyFxa054yc9eVvEq1234'
+        ))
+
+
 
     def test_empty(self):
         with self.assertRaises(ValueError):
